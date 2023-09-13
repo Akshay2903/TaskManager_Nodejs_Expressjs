@@ -1,5 +1,6 @@
 const connectDB = require('./db/connect')
 const express = require('express')
+const cors = require('cors');
 const app = express();
 const tasks = require('./routes/tasks')
 require('dotenv').config()
@@ -8,7 +9,7 @@ const errorHandlerMiddleware = require('./middleware/error-handler')
 
 
 //midddleware
-
+app.use(cors());
 app.use(express.static('./public'))
 app.use(express.json())
 
